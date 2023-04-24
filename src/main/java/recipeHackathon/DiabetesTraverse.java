@@ -1,5 +1,6 @@
 package recipeHackathon;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -26,7 +27,12 @@ public class DiabetesTraverse extends ComorbidityTraverser {
 	
 	@Override
 	public String GetMorbidityParentPage() {
-	return "https://tarladalal.com/recipes-for-indian-diabetic-recipes-370";
+		driver.get("https://tarladalal.com/");
+		driver.findElement(By.xpath("//div[contains(text(),'RECIPES')]")).click();
+		driver.findElement(By.id("ctl00_cntleftpanel_ttlhealthtree_tvTtlHealtht70")).click();
+		String pageURL=driver.getCurrentUrl();
+		
+		return pageURL;
 	}
 
 	@Override
