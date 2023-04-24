@@ -3,11 +3,12 @@ package recipeHackathon;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import recipeHackathon.Helper.ComorbidityScraper;
 import recipeHackathon.Model.Comorbidity;
-
+@Test
 public class PCOSTraverse extends ComorbidityTraverser {
 	
 	@BeforeTest
