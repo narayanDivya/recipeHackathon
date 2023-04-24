@@ -3,6 +3,7 @@ package recipeHackathon;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.openqa.selenium.By;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import recipeHackathon.Helper.ComorbidityScraper;
@@ -24,7 +25,12 @@ public class HypertensionTraverse extends ComorbidityTraverser {
 	
 	@Override
 	public String GetMorbidityParentPage() {
-	return "https://tarladalal.com/recipes-for-high-blood-pressure-644";
+		driver.get("https://tarladalal.com/");
+		driver.findElement(By.xpath("//div[contains(text(),'RECIPES')]")).click();
+		driver.findElement(By.id("ctl00_cntleftpanel_ttlhealthtree_tvTtlHealtht167")).click();
+		String pageURL=driver.getCurrentUrl();
+		
+	return pageURL;
 	}
 
 	@Override
